@@ -1,6 +1,6 @@
 const signos = ["Aries", "Tauro", "Géminis", "Cáncer", "Leo", "Virgo", "Libra", "Escorpio", "Sagitario", "Capricornio", "Acuario", "Piscis"];
 const intentos = [];
-
+console.log(intentos)
 function jugar() {
   const numeroInput = document.getElementById("numeroInput");
   const signoInput = document.getElementById("signoInput");
@@ -75,4 +75,21 @@ function mostrarHistorial() {
   });
 }
 
+function exportarExcel() {
+    const datosParaExcel = intentos.map((intento, index) => ({
+      Nro: index + 1,
+      Jugador: intento.jugador,
+      Signo_Jugador: intento.signoJugador,
+      Ganador: intento.ganador,
+      Signo: intento.signoGanador,
+      Resultado: intento.acierto ? "Acertaste" : "Fallaste",
+    }));
+  
+    const wb = XLSX.utils.book_new();
+    const ws = XLSX.utils.json_to_sheet(datosParaExcel);
+  
+    XLSX.utils.book_append_sheet(wb, ws, "Historial");
+  
+    XLSX.writeFile(wb, "historial_astro.xlsx");
+  }
   

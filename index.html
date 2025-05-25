@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
   <title>Simulador Super Astro</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -32,6 +33,7 @@
 
     <button onclick="jugar()">Jugar</button>
     <button onclick="mostrarHistorial()">Ver historial</button>
+    <button onclick="exportarExcel()">Descargar Historial en Excel</button>
 
     <div id="resultado"></div>
     <ul id="historial"></ul>
