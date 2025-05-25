@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador Super Astro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎲 Simulador Super Astro</h1>
+    
+    <label for="numeroInput">Tu número (0000 a 9999):</label>
+    <input type="number" id="numeroInput" min="0" max="9999" />
+
+    <label for="signoInput">Signo: </label>
+
+    <select id="signoInput">
+    <option value="Aries">Aries</option>
+    <option value="Tauro">Tauro</option>
+    <option value="Géminis">Géminis</option>
+    <option value="Cáncer">Cáncer</option>
+    <option value="Leo">Leo</option>
+    <option value="Virgo">Virgo</option>
+    <option value="Libra">Libra</option>
+    <option value="Escorpio">Escorpio</option>
+    <option value="Sagitario">Sagitario</option>
+    <option value="Capricornio">Capricornio</option>
+    <option value="Acuario">Acuario</option>
+    <option value="Piscis">Piscis</option>
+    </select>
+
+    <button onclick="jugar()">Jugar</button>
+    <button onclick="mostrarHistorial()">Ver historial</button>
+
+    <div id="resultado"></div>
+    <ul id="historial"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
